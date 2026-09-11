@@ -1,26 +1,25 @@
-# Trax Gym Tracker
+# Trax v4
 
-Trax is a mobile-first black/red gym tracking PWA.
+Trax v4 keeps all v3 workout/session functionality and cleans up the main interface.
 
-## Included
-- Built-in + custom exercise library
-- Individual weight/reps input for every set
-- Previous-session set references shown while logging
-- Automatic rest timer after each completed set (2 min default)
-- Manually stop the rest timer
-- Push / Pull / Legs templates
-- Custom workout templates
-- Workout duration tracking and Finish Workout action
-- Automatic weight, rep, and estimated-1RM PR detection
-- Estimated 1RM using the Epley formula
-- Progress charts for max weight, reps, e1RM and volume
-- Weekly training-volume breakdown by muscle group
-- Bodyweight log and chart
-- Local data persistence + JSON export
-- Migrates Forge localStorage data when available
-- PWA manifest + service worker for standalone/offline use
+## v4 changes
+- Added a fifth bottom navigation tab: Settings.
+- Settings sits directly to the right of Weight.
+- Moved rest timer settings, backup export and backup restore off the Home page and into Settings.
+- Removed the Data & Settings card from Home.
+- Changed the Home hero eyebrow from `Trax Training` to `Trax`.
+- Replaced the old `T` app icon with a black-background / red-dumbbell Trax icon.
+- Keeps v3's blank safe-area spacing at the top, named workouts, grouped workout history, category icons, cardio timing, custom-exercise deletion, custom presets, PR logic, backup/restore, and offline PWA support.
+- Uses the same `trax_*` localStorage keys, so updating the same GitHub Pages URL preserves your existing locally stored data.
 
-## iPhone installation
-Host this folder on any HTTPS static host (GitHub Pages, Netlify, Vercel, etc.).
-Open it in Safari, tap Share, then Add to Home Screen.
-It will launch as Trax in a standalone app-style window.
+## Updating the existing GitHub Pages version
+Replace these files in the existing Trax repository:
+- `index.html`
+- `manifest.webmanifest`
+- `sw.js`
+- `icon.svg`
+- `README.md`
+
+Commit them to `main`, wait for GitHub Pages to redeploy, then open Trax online once to allow the v4 service worker to cache the new files.
+
+If iOS keeps showing the old Home Screen icon after the website updates, remove the Home Screen shortcut and add the same Trax URL to the Home Screen again. This does not change the website URL or its stored browser data.

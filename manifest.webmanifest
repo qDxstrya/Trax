@@ -2,10 +2,11 @@
   "name": "Trax Gym Tracker",
   "short_name": "Trax",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#070708",
-  "theme_color": "#09090b",
-  "description": "Minimal black and red workout, strength progress and bodyweight tracker.",
+  "theme_color": "#070708",
+  "description": "Workout, strength, cardio and bodyweight tracker.",
   "icons": [
     {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
   ]
