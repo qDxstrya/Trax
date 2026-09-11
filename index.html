@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="Trax">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon.svg">
-<title>Trax v6</title>
+<title>Trax v8</title>
 <style>
 :root{--bg:#070708;--panel:#101012;--panel2:#151518;--text:#f6f6f7;--muted:#8d8d97;--line:#27272d;--red:#ff2d3b;--soft:rgba(255,45,59,.09);--shadow:0 18px 55px rgba(0,0,0,.42);--radius:22px}
 *{box-sizing:border-box} html,body{margin:0;min-height:100%;background:radial-gradient(circle at 14% -5%,rgba(255,45,59,.12),transparent 27%),radial-gradient(circle at 92% 4%,rgba(185,15,32,.07),transparent 22%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -51,13 +51,13 @@ label{font-size:11px;color:var(--muted);font-weight:800}input,select{width:100%;
 .settings-row{display:flex;gap:10px;margin-top:12px}.settings-row>*{flex:1}
 .empty{text-align:center;color:var(--muted);padding:27px 12px;font-size:12px}.empty .big{font-size:31px;margin-bottom:7px}
 .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(7,7,8,.94);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 10px calc(7px + env(safe-area-inset-bottom));z-index:50}.navin{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.nav button{background:transparent;border:0;color:#74747e;border-radius:13px;padding:7px 1px;font-size:8.5px;font-weight:800}.nav button .i{font-size:18px;display:block;margin-bottom:2px}.nav button.active{color:#ff4e5a;background:rgba(255,45,59,.08)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;place-items:center;padding:18px;z-index:100}.modal.show{display:grid}.modalbox{width:min(540px,100%);max-height:88vh;overflow:auto;background:#121214;border:1px solid var(--line);border-radius:24px;padding:19px;box-shadow:var(--shadow)}.modalbox h3{margin:0}.modalactions{display:flex;gap:9px;margin-top:14px}.modalactions>*{flex:1}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;place-items:center;padding:14px;z-index:100;overflow:hidden}.modal.show{display:grid}.modalbox{width:min(540px,100%);max-height:calc(100dvh - 28px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#121214;border:1px solid var(--line);border-radius:24px;padding:19px 19px 0;box-shadow:var(--shadow)}.modalbox h3{margin:0}.modalactions{display:flex;gap:9px;position:sticky;bottom:0;z-index:5;margin:14px -19px 0;padding:12px 19px max(12px,env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(18,18,20,.90),#121214 24%);border-top:1px solid var(--line);backdrop-filter:blur(12px)}.modalactions>*{flex:1}
 .pick-row{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:13px;background:#0d0d0f}.pick-row.selected{border-color:rgba(255,45,59,.32);background:rgba(255,45,59,.06)}.pick-row input{width:auto}.pick-row .grow strong{font-size:12px;display:block}.pick-row .grow small{font-size:9px;color:var(--muted)}
-.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.iconpick{background:#0d0d0f;border:1px solid var(--line);border-radius:16px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:6px}.iconpick.active{border-color:rgba(255,45,59,.45);background:rgba(255,45,59,.06)}.iconpick span{font-size:9px;color:var(--muted);text-align:center;line-height:1.25}
+.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;max-height:250px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:2px 3px 8px 0;scrollbar-width:thin}.iconpick{background:#0d0d0f;border:1px solid var(--line);border-radius:14px;padding:7px 4px;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:76px}.iconpick.active{border-color:rgba(255,45,59,.60);background:rgba(255,45,59,.08);box-shadow:0 0 0 1px rgba(255,45,59,.16) inset}.iconpick span{font-size:8px;color:var(--muted);text-align:center;line-height:1.15}.pickericon{width:46px!important;height:46px!important;border-radius:13px!important}
 .toast{position:fixed;left:50%;bottom:98px;transform:translateX(-50%) translateY(15px);opacity:0;z-index:200;background:#fff;color:#171719;border-radius:12px;padding:10px 13px;font-weight:850;font-size:11px;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .countline{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:11px;margin-top:8px}
 .note{margin-top:9px;color:var(--muted);font-size:11px;line-height:1.5}
-@media(max-width:440px){.hero h1{font-size:31px}.grid3{grid-template-columns:1fr 1fr}.row.stack{flex-direction:column}.row.stack>*{width:100%}.settings-row{flex-direction:column}.icon-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:440px){.hero h1{font-size:31px}.grid3{grid-template-columns:1fr 1fr}.row.stack{flex-direction:column}.row.stack>*{width:100%}.settings-row{flex-direction:column}.icon-grid{grid-template-columns:repeat(4,1fr);max-height:220px}.modal{padding:8px}.modalbox{max-height:calc(100dvh - 16px);border-radius:20px}.iconpick{min-height:70px}}
 </style>
 </head>
 <body>
@@ -161,7 +161,7 @@ label{font-size:11px;color:var(--muted);font-weight:800}input,select{width:100%;
       <button class="btn secondary full" style="margin-top:12px" onclick="exportData()">Export Trax backup</button>
       <button class="btn secondary full" style="margin-top:9px" onclick="triggerRestore()">Restore from backup</button>
       <input id="restoreInput" type="file" accept=".json,application/json" style="display:none" onchange="restoreData(this.files[0])">
-      <div class="note">Trax v6 keeps the same local `trax_*` storage keys used by earlier versions, so updating the same GitHub Pages URL should keep your saved data.</div>
+      <div class="note">Trax v8 keeps the same local `trax_*` storage keys used by earlier versions, so updating the same GitHub Pages URL should keep your saved data.</div>
     </div>
   </section>
 </div>
