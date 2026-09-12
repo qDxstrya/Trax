@@ -1,17 +1,23 @@
-# Trax v8.2.1
+# Trax v8.2.2
 
-Hotfix release focused on the Exercises screen and icon selectors.
+Hotfix for the superset builder.
 
-## Fixes
-- Rebuilt the exercise Add/Edit icon selector as a compact black/red 4-column grid.
-- Icon selector scrolls vertically inside its own area; Save/Cancel remain reachable.
-- Applied the same clean icon selector to preset creation.
-- Removed horizontal scrolling from the Exercises library.
-- Exercise action buttons now wrap into a mobile-safe row beneath each exercise.
-- Exercise library is grouped by muscle, then alphabetically inside each group.
-- Exact group order: Chest, Shoulders, Triceps, Back, Biceps, Forearms, Legs, Core, Cardio, Other.
-- Removed Full Body from selectable exercise categories. Existing Full Body entries are safely mapped to Other.
-- Bumped the PWA cache so GitHub Pages/iPhone picks up the hotfix.
+## Changes
+- Replaced the huge Exercise A / Exercise B dropdown menus with dedicated search pickers.
+- Search by exercise name or muscle category.
+- Tap a result to select it, with a compact selected-exercise card shown above the search field.
+- Exercise A and Exercise B are validated so the same exercise cannot be selected twice.
+- Added **Add new exercise to library** directly under both superset search fields.
+- New exercises created from the superset builder are saved to the main Trax exercise library permanently.
+- After saving a new exercise, Trax returns to the superset builder and automatically selects it on the side you were editing.
+- If the typed name already exists exactly, Trax reuses the existing library exercise instead of creating a duplicate.
+- Keeps all v8.2.1 library grouping, icon-picker, frozen-library, v8.2 features, supersets, autosave, history and settings.
+- Offline cache bumped to v8.2.2.
 
-## Updating from v8.2
-Replace `index.html`, `sw.js`, and `README.md` in the existing Trax GitHub repository. The `icons` folder, app icon, manifest and saved Trax data remain unchanged.
+## GitHub update
+Replace only:
+- `index.html`
+- `sw.js`
+- `README.md`
+
+Your existing icons folder and other PWA files do not need to change.
