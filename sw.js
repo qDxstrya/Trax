@@ -1,4 +1,4 @@
-const CACHE='trax-v8-3-1-20260912';
+const CACHE='trax-v8-3-2-20260912';
 const ASSETS=["./", "./index.html", "./manifest.webmanifest", "./icon.svg", "./icons/i01.png", "./icons/i02.png", "./icons/i03.png", "./icons/i04.png", "./icons/i05.png", "./icons/i06.png", "./icons/i07.png", "./icons/i08.png", "./icons/i09.png", "./icons/i10.png", "./icons/i11.png", "./icons/i12.png", "./icons/i13.png", "./icons/i14.png", "./icons/i15.png", "./icons/i16.png", "./icons/i17.png", "./icons/i18.png", "./icons/i19.png", "./icons/i20.png", "./icons/i21.png", "./icons/i22.png", "./icons/i23.png", "./icons/i24.png"];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});

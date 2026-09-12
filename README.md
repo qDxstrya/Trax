@@ -1,13 +1,17 @@
-# Trax v8.3.1
+# Trax v8.3.2
 
-Rollback hotfix for the v8.3 status-bar/safe-area change.
+Small icon hotfix built on v8.3.1.
 
-## What changed
-- Restores the pre-v8.3 black iPhone status-bar area.
-- Restores the larger safe-area spacer so Trax content sits below the clock, signal, Wi-Fi and battery exactly as before.
-- Removes the black-translucent status-bar treatment introduced in v8.3.
-- Keeps every v8.2.3 feature and all saved data unchanged.
-- Bumps the service-worker cache so iPhone receives the rollback immediately.
+## Changes
+- The existing red heart **Cardio** icon is now included as a selectable icon alongside the 24 muscle icons.
+- Exercise Add/Edit icon picker now lets you explicitly choose the Cardio heart icon.
+- Cardio remains the default icon when creating/editing an exercise in the Cardio category unless you choose something else.
+- Custom preset icon picker can also use the Cardio heart icon.
+- Completed workouts that contain only cardio exercises automatically use the Cardio heart icon on Home / Recent Training.
+- Workouts started from a preset preserve that preset's chosen icon, including the Cardio icon.
+- Active-workout / Next Up display respects the workout icon when available.
+- No exercise-library reset or saved-data changes.
+- Offline cache bumped to v8.3.2.
 
 ## GitHub update
 Replace only:
@@ -15,4 +19,4 @@ Replace only:
 - `sw.js`
 - `README.md`
 
-Your icon assets, manifest and local Trax data do not need to change.
+The existing `icons` folder, `icon.svg`, manifest, frozen library and user data remain unchanged.
