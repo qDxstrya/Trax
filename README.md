@@ -1,18 +1,18 @@
-# Trax v8.2.2
+# Trax v8.2.3
 
-Hotfix for the superset builder.
+Hotfix for faster set-to-set logging.
 
 ## Changes
-- Replaced the huge Exercise A / Exercise B dropdown menus with dedicated search pickers.
-- Search by exercise name or muscle category.
-- Tap a result to select it, with a compact selected-exercise card shown above the search field.
-- Exercise A and Exercise B are validated so the same exercise cannot be selected twice.
-- Added **Add new exercise to library** directly under both superset search fields.
-- New exercises created from the superset builder are saved to the main Trax exercise library permanently.
-- After saving a new exercise, Trax returns to the superset builder and automatically selects it on the side you were editing.
-- If the typed name already exists exactly, Trax reuses the existing library exercise instead of creating a duplicate.
-- Keeps all v8.2.1 library grouping, icon-picker, frozen-library, v8.2 features, supersets, autosave, history and settings.
-- Offline cache bumped to v8.2.2.
+- Applies to both normal single-exercise logging and supersets.
+- Set 1 / Round 1 stays blank so you can type your starting weight and reps manually.
+- After completing a strength set, the next set is automatically pre-filled with the same weight and reps.
+- In supersets, Exercise A and Exercise B each independently inherit their own values from the previous round.
+- The weight `+ / -` buttons now naturally work from the pre-filled value using your currently selected weight increment (5 kg by default, or whatever you type).
+- Rep `+ / -` buttons work from the pre-filled rep count in steps of 1.
+- Cardio entries remain blank between rounds/entries because this patch specifically targets strength weight/reps logging.
+- Previous-session values still appear as placeholders/reference for the first set, but are not automatically entered.
+- Keeps all v8.2.2 searchable-superset, permanent library-add, grouped exercise library, frozen library, analytics, supersets, autosave, workout editing and settings features.
+- Offline cache bumped to v8.2.3.
 
 ## GitHub update
 Replace only:
@@ -20,4 +20,4 @@ Replace only:
 - `sw.js`
 - `README.md`
 
-Your existing icons folder and other PWA files do not need to change.
+Your existing icons, manifest, frozen library and saved Trax data do not need to change.
